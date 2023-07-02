@@ -7,13 +7,17 @@
        @foreach ($blogPosts as $post)
           <div class="new__content swiper-slide">
             <div class="new__tag">New</div>
+            @if($post->image)
             <img src="{{ asset('storage/' . $post->image) }}" alt="" class="new__img">
+            @else
+            <img src="{{asset('assets/img/posts.jpg')}}">
+            @endif
             <h3 class="new__title">
               <a href="/blog/{{ $post->slug }}">{{ $post -> title }}</a></h3>
             <span class="new__subtitle">{{ $post -> description }}</span>
             <div class="new__info">
             <span><i class='bx bxs-user'></i>{{ $post->author }}</span>
-                        <span><i class="bx bxs-calendar">{{ $post->updated_at }}</i></span>
+                        <span><i class="bx bxs-time">{{ $post->updated_at->diffForHumans() }}</i></span>
                        </div>
                        
                             </div>

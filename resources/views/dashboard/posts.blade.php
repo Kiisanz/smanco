@@ -24,7 +24,7 @@
 							    <div class="app-doc-meta">
 								    <ul class="list-unstyled mb-0">
 									    <li><span class="text-muted">Author:</span> {{$post->author}}</li>
-									    <li><span class="text-muted">Uploaded:</span> {{$post->updated_at}}</li>
+									    <li><span class="text-muted">Uploaded:</span> {{$post->updated_at->diffForHumans()}}</li>
 								    </ul>
 							    </div><!--//app-doc-meta-->
 							    

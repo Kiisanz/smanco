@@ -2,7 +2,7 @@
             <nav class="nav container">
                 <a href="#" class="nav__logo">
                     <img src="assets/img/logo.webp" alt="" class="nav__logo-img">
-                    {{ $setting->name }}
+                   PRASCO
                 </a>
 
                 <div class="nav__menu" id="nav-menu">

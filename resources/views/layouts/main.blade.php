@@ -16,7 +16,7 @@
         <!--=============== CSS ===============--> 
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Prasco Official Site | {{ $title }}</title>
+        <title>Prasco Official Site</title>
     </head>
     <body>
         @include('components.navbar')

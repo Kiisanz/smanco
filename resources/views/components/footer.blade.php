@@ -58,6 +58,6 @@
 
                 <span class="footer__copy">&#169; 2023</span>
 
-                <img src="assets/img/footer1-img.png" alt="" class="footer__img-one">
-                <img src="assets/img/footer2-img.png" alt="" class="footer__img-two">
+                <img src="{{ asset('assets/img/wosm.webp') }}" alt="" class="footer__img-one">
+                <img src="{{ asset('assets/img/coconut.webp') }}" alt="" class="footer__img-two">
             </footer>

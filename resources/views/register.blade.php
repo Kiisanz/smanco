@@ -9,11 +9,16 @@
 		      	<div id="icon" class="icon d-flex align-items-center justify-content-center">
 		      	  <img class="rounded" src="assets/img/logo.webp">
 		      	</div>
-		      	<h3 id="h3" class="text-center mb-4">login sebagai admin</h3>
+		      	<h3 id="h3" class="text-center mb-4">Join Compasmania</h3>
 						<form method="post" action="/register/add" class="login-form">
 						  @csrf
 		      		<div class="form-group">
-		      			<input type="text" class="form-control rounded-left is-invalid" placeholder="Nama Lengkap" name="nama" required>
+		      			<input type="text" class="form-control rounded-left @error('nama') is-invalid @enderror" placeholder="Nama Lengkap" name="nama" required>
+		      			@error('nama')
+		      			<div class="invalid-feedback">
+		      			  {{ $message }}
+		      			</div>
+		      			@enderror
 		      		</div>
 		      		<div class="form-group">
 		      			<select name="kelas" class="form-control">
@@ -40,7 +45,12 @@
                     </select>
 		      		</div>
 	            <div class="form-group d-flex">
-	              <input type="text" class="form-control rounded-left" placeholder="Mengapa anda ingin bergabung?" name="alasan" required>
+	              <input type="text" class="form-control rounded-left @error('alasan') is-invalid @enderror" placeholder="Mengapa anda ingin bergabung?" name="alasan" required>
+	              	@error('alasan')
+		      			<div class="invalid-feedback">
+		      			  {{ $message }}
+		      			</div>
+		      			@enderror
 	            </div>
 	            <div class="form-group">
 	            	<button id="btn" type="submit" class="btn rounded submit p-3 px-5">Daftar</button>

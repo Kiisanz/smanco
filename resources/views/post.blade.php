@@ -12,12 +12,16 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{ $post['title'] }}</h1>
                             <!-- Post meta content-->
-                            <div id="post-meta" class="fs-6 fst-italic mb-2">Di posting oleh {{ $post->author }} pada {{ $post['updated_at'] }}</div>
+                            <div id="post-meta" class="fs-6 fst-italic mb-2">Di posting oleh {{ $post->author }} pada {{ $post['updated_at']->diffForHumans() }}</div>
                         </header>
                         <!-- Preview image figure-->
                          @if($post->image)
                         <figure class="img__post mb-4">
                           <img class="img-fluid rounded max-height" src="{{asset('storage/' . $post->image) }}" alt="{{ $post->title }}" />
+                          </figure>
+                          @else
+                          <figure class="img_post mb-4">
+                            <img class="img-fluid rounded max-height" src="{{asset('assets/img/post_detail.jpg')}}">
                           </figure>
                           @endif
                         <!-- Post content-->

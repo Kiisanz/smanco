@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('index')
-			    <h1 class="app-page-title">Akun saya</h1>
+			    <h1 class="app-page-title">Buat postingan</h1>
                 <div class="row gy-4">
 	                <div class="col-12 col-lg-6">
 		                <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
@@ -9,14 +9,12 @@
 						        <div class="row align-items-center gx-3">
 							        <div class="col-auto">
 								        <div class="app-icon-holder">
-										    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-</svg>
+										    <i class="fas fa-pencil"></i>
 									    </div><!--//icon-holder-->
 						                
 							        </div><!--//col-->
 							        <div class="col-auto">
-								        <h4 class="app-card-title">Profile</h4>
+								        <h4 class="app-card-title">Buat postingan</h4>
 							        </div><!--//col-->
 						        </div><!--//row-->
 						    </div><!--//app-card-header-->
@@ -44,8 +42,9 @@
 									    <input type="text" class="form-control" id="setting-input-3" name="description" placeholder="Desktipsi postingan" required>
 									</div>
 									<div class="mb-3">
-  <label for="formFileSm" class="form-label">Small file input example</label>
-  <input class="form-control form-control-sm" id="formFileSm" type="file" name="image">
+  <label for="formFileSm" class="form-label">Gambar cover postingan</label>
+  <img id="img-preview" class="img-preview img-fluid col-sm-4 mb-3">
+  <input class="form-control form-control-sm" id="img" type="file" name="image" onchange="imgP()">
 </div>
 									<div class="mb-3">
 									    <label for="setting-input-3" class="form-label">Isi postingan</label>
@@ -60,6 +59,16 @@
 						</div><!--//app-card-->
 	                </div><!--//col-->
                 </div><!--//row-->
+                
+  <script>
+  function imgP(){
+    const imgP = document.getElementById('#img-preview')
+    const img = document.getElemetById('#img')
+    imgP.style.display = 'block'
+    const blob = URL.createObjectURL(image.files[0])
+    imgP.src = blob;
+  }   
+  </script>
 		    @endsection
 		    
 		    

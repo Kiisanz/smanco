@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\blog;
 use App\Models\Dashboard;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Pengaturan;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,9 @@ class BlogController extends Controller
 {
     public function index()
     {
-      $pengaturan = Pengaturan::all();
-      foreach ($pengaturan as $settings)
       return view('homepage', [
         'title' => 'Home',
         'blogPosts' => blog::all(),
-        'setting' => $settings
         ]);
     }
     
@@ -53,6 +51,10 @@ class BlogController extends Controller
         'body' => 'required'
         ]);
         
+        if($post->image != null){
+          Storage::delete($post->image);
+        }
+        
         if ($request->file('image')) {
           $npost['image'] = $request->file('image')->store('post-images');
         }
@@ -63,6 +65,9 @@ class BlogController extends Controller
     
     public function destroy(blog $post)
     {
+      if($post->image){
+        Storage::delete($post->image);
+      }
         blog::destroy($post->id);
         return redirect('/dashboard/myposts');
     }

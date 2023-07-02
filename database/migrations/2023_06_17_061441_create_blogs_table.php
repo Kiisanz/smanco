@@ -9,16 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
+    
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string("title");
             $table->string("author");
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string("slug")->unique();
             $table->text("description");
             $table->text("body");
+            $table->timestamp('time')->useCurrent();
             $table->timestamps();
         });
     }

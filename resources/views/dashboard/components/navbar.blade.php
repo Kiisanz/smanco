@@ -30,12 +30,17 @@
 					    </div><!--//app-utility-item-->
 			            
 			            <div class="app-utility-item app-user-dropdown dropdown">
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="{{ asset('assets/images/user.png') }}" alt="user profile"></a>
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="{{ asset('assets/img/logo.webp') }}" alt="user profile"></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-								<li><a class="dropdown-item" href="account.html">Account</a></li>
-								<li><a class="dropdown-item" href="/dashboard/settings">Settings</a></li>
+								<li><a class="dropdown-item" href="/dadhboard/account"><i class="fas fa-user mr-3"></i>Halo, {{ auth()->user()->name}}</a></li>
+								<li><a class="dropdown-item" href="/dashboard/settings"><i class="fas fa-cog mr-3"></i>Settings</a></li>
 								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="login.html">Log Out</a></li>
+								<li>
+								  <form method="post" action="/logout">
+								    @csrf
+								  <button class="dropdown-item"><i class="fas fa-sign-out mr-3"></i>Log Out</button>
+								  </form>
+								  </li>
 							</ul>
 			            </div><!--//app-user-dropdown--> 
 		            </div><!--//app-utilities-->

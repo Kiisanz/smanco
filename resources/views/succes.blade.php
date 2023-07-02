@@ -1,54 +1,36 @@
-
-<!------ Include the above in your HEAD tag ---------->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Success!!</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
 
-    <title>Hello, world!</title>
-     <style type="text/css" media="all">
-   #btn{
-     background-color: #91562d;
-     border: none;
-     border-ring: none;
-     color: white;
-     
-   }
-   
-   #btn:active,
-   #btn:hover{
-     background-color: #633a04;
-     transition: .5s;
-     
-   }
-  </style>
-  </head>
-  
- 
-  <body>
-   <div class="container">
-	<div class="row text-center">
-        <div class="col-sm-6 col-sm-offset-3">
-        <br><br> <h2 style="color:#0fad00">Success</h2>
-        <img src="http://osmhotels.com//assets/check-true.jpg">
-        <h3>Dear, Faisal khan</h3>
-        <p style="font-size:20px;color:#91562d;">Terimakasih sudah menjadi bagian dari compasmania!!. Gabung ke grup WhatsApp untuk mendapatkan lebih banyak informasi.</p>
-        <a href="" class="btn" id="btn">     Gabung grup WhatsApp      </a>
-    <br><br>
+    <body>
+        <div class="vh-100 d-flex justify-content-center align-items-center">
+            <div class="col-md-4">
+                <div class="border border-3 border-success"></div>
+                <div class="card  bg-white shadow p-5">
+                    <div class="mb-4 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-success" width="75" height="75"
+                            fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <h1>Berhasil!</h1>
+                        <p>Terimakasih sudah menjadi bagian dari Compasmania!<br>
+                        Join grup WhatsApp untuk inormasi lebih lengkap</p>
+                        <a href="{{ $setting->group }}" class="btn btn-outline-success">Gabung grup</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-	</div>
-</div>
- 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+    </body>
+
 </html>
-
-
-
-
